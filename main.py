@@ -17,7 +17,7 @@ class FileMover:
     def find_files(self):
         result = {}
         if os.path.isdir(self.origin):
-            for root, dirs, files in os.walk(self.origin):
+            for root, _, files in os.walk(self.origin):
                 for name in files:
                     for tp in self.types:
                         if tp in magic.from_file(
